@@ -19,7 +19,7 @@ account_types = ["teacher", "student"]
 
 
 15.times do
-    User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username:Faker::Internet.username, password_digest:Faker::Internet.password, account_type: account_types.sample)
+    User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username:Faker::Internet.username, password_digest:Faker::Internet.password, account_type: account_types.sample, avatar: "http://www.manana.si/uploads/3/1/0/4/31047219/karelia_orig.jpg")
 end
 
 15.times do
