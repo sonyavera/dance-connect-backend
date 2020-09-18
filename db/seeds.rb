@@ -13,7 +13,7 @@ UserClass.destroy_all
 Comment.destroy_all
 Like.destroy_all
 
-styles = ["Cuban Salsa", "Kizomba", "Bachata", "Afro-Cuban Folklore", "New York Salsa", "Zouk"]
+styles = ["cubansalsa", "kizomba", "bachata", "afrocubanfolklore", "newyorksalsa", "zouk"]
 account_types = ["teacher", "student"]
 
 
