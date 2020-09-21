@@ -19,6 +19,12 @@ class DanceClassesController < ApplicationController
         render json: {dance_class: dance_class, instructor_first_name: instructor.first_name, instructor_last_name: instructor.last_name, instructor_img: instructor.avatar}
     end
 
+    def my_dance_classes
+        purchased_dance_classes = current_user.joined_classes
+        created_dance_classes = current_user.dance_classes
+        render json: { purchased_dance_classes: purchased_dance_classes, created_dance_classes: created_dance_classes}
+      end
+
     private
 
     def dance_class_params

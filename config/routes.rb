@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :likes
   resources :comments
   resources :users
+  get 'me/dance_classes', to: 'dance_classes#my_dance_classes'
 
 
   namespace :api do
