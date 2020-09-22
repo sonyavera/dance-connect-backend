@@ -10,7 +10,7 @@ class DanceClass < ApplicationRecord
     has_many :likes, through: :comments
 
 
-    # after_initialize do |dance_class|
-    #     dance_class.instructor_name = user.first_name + " " + user.last_name
-    # end
+    after_initialize do |dance_class|
+        dance_class.instructor_name = user.first_name + " " + user.last_name
+    end
 end

@@ -13,9 +13,7 @@ class DanceClassesController < ApplicationController
 
     def show
         dance_class = DanceClass.find([params[:id]])
-        instructor_id = dance_class[0].user_id
-        instructor = User.find_by_id(instructor_id)
-        render json: {dance_class: dance_class, instructor_first_name: instructor.first_name, instructor_last_name: instructor.last_name, instructor_img: instructor.avatar}
+        render json: {dance_class: dance_class}
     end
 
     def my_dance_classes
