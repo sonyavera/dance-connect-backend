@@ -8,7 +8,6 @@ class DanceClassesController < ApplicationController
 
     def create
         dance_class = current_user.dance_classes.create(dance_class_params)
-        # dance_class.instructor_name = User.all.find_by_id(current_user.id)
         render json: { event: dance_class }, status: :created
     end
 
