@@ -25,6 +25,6 @@ class DanceClassesController < ApplicationController
     private
 
     def dance_class_params
-        params.require(:dance_class).permit(:user_id, :release_date, :style)
+        params.require(:dance_class).permit(:user_id, :date, :style, :level, :description, :url)
     end
 end
