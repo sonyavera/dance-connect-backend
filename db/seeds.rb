@@ -15,6 +15,12 @@ Like.destroy_all
 
 styles = ["cubansalsa", "kizomba", "bachata", "afrocubanfolklore", "newyorksalsa", "zouk"]
 account_types = ["teacher", "student"]
+levels = ["Beginner", "Intermediate", "Advanced", "Open Level"]
+videos =[
+    "https://www.youtube.com/watch?v=uGjxUvP-s9E&feature=youtu.be&fbclid=IwAR28Hwvj-o-OsBLTohqr8hqfdFxgAYKLWMLFEVHm2dHKhc44AJirXWO_edo",
+    "https://www.youtube.com/watch?v=916WA8Uvsuc",
+    "https://www.youtube.com/watch?v=Rj2QBEZeyqU&feature=youtu.be"  
+]
 
 
 
@@ -30,8 +36,12 @@ end
 50.times do
     DanceClass.create(user_id: User.all.sample.id, 
                       style: styles.sample, 
-                      release_date: Faker::Date.between(from: '2020-09-23', to: '2020--12-01'),
-                      description: Faker::Lorem.paragraph(sentence_count: 2) )
+                      level: levels.sample,
+                      date: Faker::Date.between(from: '2020-09-23', to: '2020--12-01'),
+                      description: Faker::Lorem.paragraph(sentence_count: 2),
+                      price: Faker::Number.between(from: 1, to: 50),
+                      url: videos.sample
+                     )
 end
 
 40.times do
