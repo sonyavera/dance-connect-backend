@@ -1,5 +1,6 @@
 class DanceClass < ApplicationRecord
     attribute :instructor_name, :string
+    attribute :instructor_avatar, :string
 
     belongs_to :user
 
@@ -12,5 +13,6 @@ class DanceClass < ApplicationRecord
 
     after_initialize do |dance_class|
         dance_class.instructor_name = user.first_name + " " + user.last_name
+        dance_class.instructor_avatar = user.avatar
     end
 end
