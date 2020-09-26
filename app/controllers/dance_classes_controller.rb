@@ -8,7 +8,7 @@ class DanceClassesController < ApplicationController
 
     def create
         dance_class = current_user.dance_classes.create(dance_class_params)
-        render json: { event: dance_class }, status: :created
+        render json: { dance_class: dance_class }, status: :created
     end
 
     def show

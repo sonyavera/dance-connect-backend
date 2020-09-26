@@ -19,7 +19,9 @@ levels = ["Beginner", "Intermediate", "Advanced", "Open Level"]
 videos =[
     "https://www.youtube.com/watch?v=uGjxUvP-s9E&feature=youtu.be&fbclid=IwAR28Hwvj-o-OsBLTohqr8hqfdFxgAYKLWMLFEVHm2dHKhc44AJirXWO_edo",
     "https://www.youtube.com/watch?v=916WA8Uvsuc",
-    "https://www.youtube.com/watch?v=Rj2QBEZeyqU&feature=youtu.be"  
+    "https://www.youtube.com/watch?v=Rj2QBEZeyqU&feature=youtu.be,
+    https://www.youtube.com/watch?v=8u6P1we3dik,
+    https://www.youtube.com/watch?v=UD3KPNG-GmU"  
 ]
 
 
