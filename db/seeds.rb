@@ -32,7 +32,7 @@ videos =[
                 username:Faker::Internet.username, 
                 password_digest:Faker::Internet.password, 
                 account_type: account_types.sample, 
-                avatar: "http://www.manana.si/uploads/3/1/0/4/31047219/karelia_orig.jpg")
+            )
 end
 
 50.times do
