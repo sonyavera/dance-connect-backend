@@ -1,4 +1,6 @@
 class DanceClassesController < ApplicationController
+    include Rails.application.routes.url_helpers
+
     skip_before_action :authorized
 
     def index
@@ -8,6 +10,8 @@ class DanceClassesController < ApplicationController
 
     def create
         dance_class = current_user.dance_classes.create(dance_class_params)
+        # dance_class.avatar.attach(dance_class_params[:avatar])
+        # dance_class.uploaded_avatar = url_for(dance_class.uploaded_avatar)
         render json: { dance_class: dance_class }, status: :created
     end
 
