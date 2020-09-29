@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :comments
   resources :users
   get 'me/dance_classes', to: 'dance_classes#my_dance_classes'
+  get 'unique_dance_classes', to: 'dance_classes#unique_classes'
 
 
   namespace :api do

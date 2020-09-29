@@ -24,7 +24,15 @@ class DanceClassesController < ApplicationController
         purchased_dance_classes = current_user.joined_classes
         created_dance_classes = current_user.dance_classes
         render json: { purchased_dance_classes: purchased_dance_classes, created_dance_classes: created_dance_classes}
-      end
+    end
+
+
+    def unique_classes
+        # byebug
+        unique_array = DanceClass.all.uniq{|dance_class| dance_class.instructor_avatar}
+        render json: { unique_dance_class_array: unique_array}
+        #returns all teachers and their avatars
+    end
 
     private
 
