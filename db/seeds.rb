@@ -24,12 +24,12 @@ videos =[
     https://www.youtube.com/watch?v=UD3KPNG-GmU"  
 ]
 avatars = [
-                "https://lh3.googleusercontent.com/proxy/mBQhxr6CcoX332xfahvmr8njmQnvCTTeR3I2pFEgo_hgBf6EOYSPdHMhZYLICiLNiRuW2siqcbyd-NEOIkLdNy5Q6_9E2q2IbH8ZJ3hd6x7f",
                 "https://images.squarespace-cdn.com/content/v1/525d431fe4b0c7982004d469/1488400976979-M2PMTNV9MKDQ77TGJMA7/ke17ZwdGBToddI8pDm48kGm_lmxn_JwT7UQFYPwQ7ZxZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwXWplLfyj2T9RmzkPfGlD5YA16S37GzO0FbXGbA1afGkmpTu4DKR10BpnFEkUNJHQ/image5.JPG?format=1500w",
                 "https://static.wixstatic.com/media/aefce4_30ec11808a3b4c26a8500975e6994087~mv2_d_3505_3025_s_4_2.png/v1/fill/w_3505,h_3025,al_c/aefce4_30ec11808a3b4c26a8500975e6994087~mv2_d_3505_3025_s_4_2.png",
                 "https://pbs.twimg.com/media/DIqyA49VAAAq6dc.jpg",
                 "https://i.ytimg.com/vi/gVgYJlPnTuc/maxresdefault.jpg",
-                "https://i0.wp.com/golatindance.com/wp-content/uploads/2020/01/ace-and-ciara-crop.png?fit=740%2C421&ssl=1"
+                "https://i0.wp.com/golatindance.com/wp-content/uploads/2020/01/ace-and-ciara-crop.png?fit=740%2C421&ssl=1",
+                "https://lh3.googleusercontent.com/proxy/0n5tg1OmoFucqzSiUswMP58qd2Kxs_67M6pY8fgZMCFQvLK5NkSm4zQ9ABb4Ur3Czou6c6bvMgfZcQJXeTrcQsn2kk3V6cvIqC5Z8d6RXmUW"
             ]
 
 
