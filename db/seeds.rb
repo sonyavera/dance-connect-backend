@@ -10,8 +10,8 @@
 DanceClass.destroy_all
 User.destroy_all
 UserClass.destroy_all
-Comment.destroy_all
-Like.destroy_all
+# Comment.destroy_all
+# Like.destroy_all
 
 styles = ["cubansalsa", "kizomba", "bachata", "afrocubanfolklore", "newyorksalsa", "zouk"]
 account_types = ["teacher", "student"]
@@ -38,6 +38,12 @@ descriptions = [
     "We will go into detail with technique and I'll teach you about the history behind the steps.",
     "A slow paced class for those looking to perfect their movements.",
     "In this class we'll be building on to what I taught in my previous class. Purchase both for full understanding."
+]
+
+user_comments =[
+    "Wow, best class ever!",
+    "This was an amazing workout and I improved my technique with this class.",
+    "Slow paced but very fun! I learned a lot and I'm actually pretty sore."
 ]
 
 
@@ -68,13 +74,21 @@ end
                     user_id: User.all.sample.id)
 end
 
-100.times do
-    Comment.create(user_id: User.all.sample.id, 
-                   dance_class_id: DanceClass.all.sample.id, 
-                   text: Faker::Movies::HarryPotter.quote)
+
+DanceClass.all.each do |dance_class|
+    10.times do
+        dance_class.comments.create(body: user_comments.sample)
+    end
 end
 
-100.times do
-    Like.create(user_id: User.all.sample.id, 
-               comment_id: Comment.all.sample.id)
-end
+
+
+#     Comment.create(user_id: User.all.sample.id, 
+#                    dance_class_id: DanceClass.all.sample.id, 
+#                    text: Faker::Movies::HarryPotter.quote)
+# end
+
+# 100.times do
+#     Like.create(user_id: User.all.sample.id, 
+#                comment_id: Comment.all.sample.id)
+# end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_28_164647) do
+ActiveRecord::Schema.define(version: 2020_09_30_152703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,11 +37,11 @@ ActiveRecord::Schema.define(version: 2020_09_28_164647) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "text"
+    t.text "body"
+    t.integer "commentable_id"
+    t.string "commentable_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "dance_class_id"
   end
 
   create_table "dance_classes", force: :cascade do |t|
@@ -54,13 +54,6 @@ ActiveRecord::Schema.define(version: 2020_09_28_164647) do
     t.string "level"
     t.string "url"
     t.integer "price"
-  end
-
-  create_table "likes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "comment_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "user_classes", force: :cascade do |t|

@@ -11,8 +11,12 @@ class DanceClass < ApplicationRecord
     has_many :user_classes
     has_many :users, through: :user_classes
 
-    has_many :comments
-    has_many :likes, through: :comments
+
+    has_many :comments, as: :commentable
+
+    def self.comments
+        comments
+    end
 
 
     after_initialize do |dance_class|

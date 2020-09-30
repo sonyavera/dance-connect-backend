@@ -26,6 +26,12 @@ class DanceClassesController < ApplicationController
         render json: { purchased_dance_classes: purchased_dance_classes, created_dance_classes: created_dance_classes}
     end
 
+    def comments
+        dance_class = DanceClass.find([params[:dance_class_id]])
+        comments = dance_class[0].comments
+        render json: {dance_class_comments: comments }
+    end
+
 
     def unique_classes
         unique_array = DanceClass.all.uniq{|dance_class| dance_class.instructor_avatar}
