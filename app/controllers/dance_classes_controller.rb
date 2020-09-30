@@ -28,6 +28,7 @@ class DanceClassesController < ApplicationController
 
     def comments
         dance_class = DanceClass.find([params[:dance_class_id]])
+        byebug
         comments = dance_class[0].comments
         render json: {dance_class_comments: comments }
     end

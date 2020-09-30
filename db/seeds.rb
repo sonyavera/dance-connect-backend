@@ -10,7 +10,7 @@
 DanceClass.destroy_all
 User.destroy_all
 UserClass.destroy_all
-# Comment.destroy_all
+Comment.destroy_all
 # Like.destroy_all
 
 styles = ["cubansalsa", "kizomba", "bachata", "afrocubanfolklore", "newyorksalsa", "zouk"]
@@ -77,7 +77,7 @@ end
 
 DanceClass.all.each do |dance_class|
     10.times do
-        dance_class.comments.create(body: user_comments.sample)
+        dance_class.comments.create(body: user_comments.sample, user_id: User.all.sample.id)
     end
 end
 
