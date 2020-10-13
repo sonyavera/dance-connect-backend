@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users
   get 'me/dance_classes', to: 'dance_classes#my_dance_classes'
   get 'unique_dance_classes', to: 'dance_classes#unique_classes'
-  # resources :charges
+  post '/webhook', to: 'charges#webhook'
   post '/create-session', to: 'charges#create'
 
   namespace :api do
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       patch '/users/:id', to: 'users#update'
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
+      
     end
   end
 
