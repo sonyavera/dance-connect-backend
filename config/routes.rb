@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :users
   get 'me/dance_classes', to: 'dance_classes#my_dance_classes'
   get 'unique_dance_classes', to: 'dance_classes#unique_classes'
-  
+  # resources :charges
+  post '/create-session', to: 'charges#create'
 
   namespace :api do
     namespace :v1 do
