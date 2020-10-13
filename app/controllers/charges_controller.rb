@@ -1,7 +1,5 @@
 require 'stripe'
 Stripe.api_key = ENV['STRIPE_SECRET_KEY']
-$user = nil
-$class_id = nil
 
 
 class ChargesController < ApplicationController
@@ -12,9 +10,9 @@ class ChargesController < ApplicationController
     # end
     
     def create
-        $user = current_user
-        $class_id = params[:class_id]
         dance_class = DanceClass.find_by_id(params[:class_id])
+        # $user_id = current_user.id
+        # $dance_class_id = dance_class.id
         session = Stripe::Checkout::Session.create({
             payment_method_types: ['card'],
             line_items: [{
@@ -29,9 +27,11 @@ class ChargesController < ApplicationController
                 quantity: 1,
                 }],
                 mode: 'payment',
-                success_url: "http://localhost:3001/me/purchases" + "#{$class_id}" + '?success=true',
+                success_url: "http://localhost:3001/me/purchases/" + "#{params[:class_id]}" + '?success=true',
                 # success_url: "http://localhost:3001/home/student" + '?success=true',
-                cancel_url: "http://localhost:3001/home/student" + '?canceled=true',
+                cancel_url: "http://localhost:3001/me/purchases" + '?canceled=true',
+                client_reference_id: "#{current_user.id}",
+                metadata: {class_id: "#{params[:class_id]}"}
             })
         render json: {id: session.id}
     end
@@ -67,7 +67,9 @@ class ChargesController < ApplicationController
     end
 
     def fulfill_order(checkout_session)
-        UserClass.create(user_id: $user.id, dance_class_id: $class_id)
+        # UserClass.create(user_id: $user_id, dance_class_id: $dance_class_id)
+        UserClass.create(user_id: checkout_session.client_reference_id, dance_class_id: checkout_session.metadata.class_id)
+
         # TODO: fill in with your own logic
         puts "Fulfilling order for #{checkout_session.inspect}"
     end
