@@ -30,6 +30,7 @@ class ChargesController < ApplicationController
     end
     
 end
+        # Stripe.api_key = ENV['STRIPE_SECRET_KEY']
 
 
         # byebug
