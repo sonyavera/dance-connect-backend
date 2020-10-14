@@ -25,6 +25,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def update
+    byebug
     # updated_user = current_user.update_attributes(params[:user_params])
     updated_user = current_user.update_attributes(params[:user])
     render json: {user: updated_user}
