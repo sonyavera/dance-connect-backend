@@ -40,7 +40,7 @@ class Api::V1::UsersController < ApplicationController
     end
     if params[:avatar] != "null"
       current_user.avatar.purge_later
-      # current_user.avatar.attach(params[:avatar])
+      current_user.avatar.attach(params[:avatar])
     end
     
     render json: {user: current_user}

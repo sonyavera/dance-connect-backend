@@ -57,7 +57,7 @@ end
                       level: levels.sample,
                       date: Faker::Date.between(from: '2020-09-23', to: '2020--12-01'),
                       description: descriptions.sample,
-                      price: Faker::Number.between(from: 1, to: 50),
+                      price: Faker::Number.between(from: 5, to: 40),
                       url: videos.sample
                      )
 end
