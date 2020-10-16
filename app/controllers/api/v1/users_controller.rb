@@ -13,7 +13,9 @@ class Api::V1::UsersController < ApplicationController
                         password: params[:password],
                         account_type: params[:account_type]
                       )
-    user.avatar.attach(params[:avatar])
+    if params[:avatar]
+      user.avatar.attach(params[:avatar])
+    end
     if user.valid?
       token = encode_token({ user_id: user.id })
       render json: { user: UserSerializer.new(user), jwt: token }, status: :created
@@ -39,7 +41,7 @@ class Api::V1::UsersController < ApplicationController
       current_user.update(account_type: params[:account_type])
     end
     if params[:avatar] != "null"
-      current_user.avatar.purge_later
+      current_user.avatar.purge
       current_user.avatar.attach(params[:avatar])
     end
     
